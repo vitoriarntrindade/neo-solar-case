@@ -15,7 +15,7 @@ ROOT_PATH = Path(__file__).parent
 def generate_report_pdf(solar_generators, arquivo_pdf=file_pdf):
     # Cria um objeto Canvas
 
-    path_pdf = f'{ROOT_PATH}/email_marketing_{datetime.now()}.pdf'
+    path_pdf = f'{ROOT_PATH}/{file_pdf}'
 
     # Verificando se o diretório do arquivo PDF existe; se não, cria o diretório
     folder_pdf = os.path.dirname(path_pdf)

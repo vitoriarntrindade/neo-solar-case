@@ -1,3 +1,7 @@
 .venv
 /venv
 .idea
+*__pycache__/
+__pycache__
+/__pycache__
+/__pycache__/generate_report_pdf.cpython-312.pyc
