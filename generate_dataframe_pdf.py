@@ -4,7 +4,7 @@ from typing import List
 
 import pandas as pd
 from reportlab.lib.pagesizes import letter
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Image
 from reportlab.lib import colors
 from pathlib import Path
 
@@ -14,16 +14,26 @@ ROOT_PATH = Path(__file__).parent
 
 
 def create_pdf_with_table(solar_generators: List[SolarGenerator]) -> None:
-    path_pdf = f'{ROOT_PATH}/email_marketing_{datetime.datetime.now()}.pdf'
+    path_pdf = f'{ROOT_PATH}/email_marketing_{datetime.datetime.now().strftime("%Y%m%d_%H%M%S")}.pdf'
 
     # Verificando se o diretório do arquivo PDF existe; se não, cria o diretório
     folder_pdf = os.path.dirname(path_pdf)
     if folder_pdf and not os.path.exists(folder_pdf):
         os.makedirs(folder_pdf)
 
+    # Caminho para o logo
+    logo_path = ROOT_PATH / 'assets/logo.png'
+
     # Criando o documento PDF
     doc = SimpleDocTemplate(path_pdf, pagesize=letter)
     elements = []
+
+    # Adicionando o logo ao documento
+    if logo_path.exists():
+        logo = Image(logo_path, width=150, height=80)
+        logo.hAlign = 'LEFT'
+        logo.vAlign = 'TOP'
+        elements.append(logo)
 
     products_dict_list = []
 
