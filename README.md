@@ -17,6 +17,11 @@ O script principal realiza as seguintes etapas:
 4. **Enviar notificação por email com a quantidade de geradores**
 5. **Criar Tabela em PDF com os Geradores Configurados para uso do time de Marketing**
 
+## Diagrama de Caso de Uso
+
+![Diagrama de Caso de Uso](https://raw.githubusercontent.com/vitoriarntrindade/neo-solar-case/main/diagrams/use_case_diagram.png)
+
+
 ## Requisitos
 
 Antes de executar o script, certifique-se de que você tem as seguintes bibliotecas instaladas:
