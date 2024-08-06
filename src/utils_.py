@@ -2,7 +2,7 @@ from typing import List, Union, Optional, Type
 import requests
 import csv
 
-from schemas import Inverter, Controller, SolarPanel, SolarGenerator
+from .schemas import Inverter, Controller, SolarPanel, SolarGenerator
 
 
 def factory_product_schemas(category: str) -> Optional[Type[Union[Inverter, Controller, SolarPanel]]]:

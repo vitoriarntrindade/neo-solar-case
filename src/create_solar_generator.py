@@ -1,4 +1,5 @@
 from itertools import combinations
+from pprint import pprint
 from typing import List
 
 from schemas import SolarGenerator

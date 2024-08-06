@@ -1,0 +1,54 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+:User: as User
+(Uso do sistema) as (Use)
+
+User ---> (Use)
+
+note right of User : Usuário do sistema.
+
+(Use) --> (Obtem dados e organiza)
+(Obtem dados e organiza) --> (Configuração dos Geradores)
+(Configuração dos Geradores) --> (Salvar Geradores em CSV)
+(Salvar Geradores em CSV) --> (Enviar Email de Notificação)
+(Enviar Email de Notificação) --> (Gerar Relatório PDF)
+(Gerar Relatório PDF) --> (Criar Tabela em PDF)
+
+note right of (Obtem dados e organiza)
+Este caso de uso envolve fazer uma request
+para o endpoint de produtos e retornar
+os dados organizados.
+end note
+
+note right of (Configuração dos Geradores)
+Este caso de uso envolve a configuração
+de geradores solares com base nos produtos obtidos.
+end note
+
+note right of (Salvar Geradores em CSV)
+Este caso de uso envolve salvar os geradores
+configurados em um arquivo CSV.
+end note
+
+note right of (Enviar Email de Notificação)
+Este caso de uso envolve enviar um email
+de notificação com a quantidade de
+geradores configurados.
+end note
+
+note right of (Gerar Relatório PDF)
+Este caso de uso envolve gerar um PDF com
+um relatório da quantidade de geradores configurados.
+end note
+
+note right of (Criar Tabela em PDF)
+Este caso de uso envolve criar uma tabela
+em PDF para visualização dos geradores
+configurados pelo time de marketing.
+end note
+
+note "Este diagrama descreve os casos de uso\ne as interações do usuário com o sistema." as N2
+(User) .. N2
+N2 .. (Use)
+@enduml

@@ -1,8 +1,12 @@
-from generate_report_pdf import generate_report_pdf
-from utils import get_data_and_organize, save_generators_in_csv
-from create_solar_generator import create_solar_generator
-from email_service import EmailService
-from generate_dataframe_pdf import create_pdf_with_table
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
+
+from src.create_solar_generator import create_solar_generator
+from src.email_service import EmailService
+from src.generate_dataframe_pdf import create_pdf_with_table
+from src.generate_report_pdf import generate_report_pdf
+from src.utils_ import get_data_and_organize, save_generators_in_csv
 
 # URL do Anexo B
 PRODUCTS_URL_ENDPOINT = "https://case-1sbzivi17-henriques-projects-2cf452dc.vercel.app/"

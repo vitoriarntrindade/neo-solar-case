@@ -10,7 +10,7 @@ from pathlib import Path
 
 from schemas import SolarGenerator
 
-ROOT_PATH = Path(__file__).parent
+ROOT_PATH = Path(__file__).parent.parent
 
 
 def create_pdf_with_table(solar_generators: List[SolarGenerator]) -> None:

@@ -25,6 +25,7 @@ def generate_report_pdf(solar_generators, arquivo_pdf=file_pdf):
     c = canvas.Canvas(arquivo_pdf, pagesize=letter)
     largura, altura = letter
 
+
     # Título do relatório
     title = "Relatório semanal de geradores configurados"
     c.setFont("Helvetica-Bold", 14)
